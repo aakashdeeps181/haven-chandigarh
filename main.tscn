@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://crc1de7any4iq" path="res://c.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://hei5clay2c1p" path="res://horsie1.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://0i7bfh0vvwkk" path="res://flag-removebg-preview.png" id="3_h2yge"]
+[ext_resource type="AudioStream" uid="uid://dwxmbnsej8xv4" path="res://humordome-boing-boing-bounce-454474.mp3" id="4_1bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tojt2"]
+size = Vector2(99, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ym3lw"]
+size = Vector2(2012, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xb3h0"]
+size = Vector2(60, 101)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h2yge"]
+load_path = "res://.godot/imported/flag-removebg-preview.png-4f81582b0465b0b3ad1d568a94dcfdcb.ctex"
+
+[node name="Node2D" type="Node2D" unique_id=293316145]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=845479166]
+offset_left = -2.0
+offset_top = 6.0
+offset_right = 2008.0
+offset_bottom = 347.0
+color = Color(0, 1, 1, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1261014390]
+position = Vector2(75, 20)
+script = ExtResource("1_0xm2m")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1750973648]
+position = Vector2(-6, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1599754594]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1548244481]
+position = Vector2(-3, 2)
+shape = SubResource("RectangleShape2D_tojt2")
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=1372210391]
+position = Vector2(0, 304)
+
+[node name="ColorRect" type="ColorRect" parent="Platform" unique_id=787209457]
+offset_right = 2011.0
+offset_bottom = 40.0
+color = Color(0, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=1363542565]
+position = Vector2(1013, 20)
+shape = SubResource("RectangleShape2D_ym3lw")
+
+[node name="Flag" type="StaticBody2D" parent="." unique_id=2030810884]
+position = Vector2(1884, 254)
+
+[node name="Sprite2D" type="Sprite2D" parent="Flag" unique_id=230733229]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag" unique_id=129884726]
+position = Vector2(-8, -6)
+shape = SubResource("RectangleShape2D_xb3h0")
+
+[node name="FlagRemovebgPreview" type="Sprite2D" parent="." unique_id=885177615]
+position = Vector2(775, 280)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_h2yge")
+
+[node name="FlagRemovebgPreview2" type="Sprite2D" parent="." unique_id=172707903]
+position = Vector2(543, 275)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_h2yge")
+
+[node name="FlagRemovebgPreview3" type="Sprite2D" parent="." unique_id=204673499]
+position = Vector2(342, 281)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_h2yge")
+
+[node name="FlagRemovebgPreview4" type="Sprite2D" parent="." unique_id=1895612075]
+position = Vector2(122, 284)
+scale = Vector2(0.3, 0.3)
+texture = SubResource("CompressedTexture2D_h2yge")
+
+[node name="Label" type="Label" parent="." unique_id=325999189]
+visible = false
+offset_left = 892.0
+offset_top = 191.0
+offset_right = 977.0
+offset_bottom = 214.0
+text = "YOU WIN!"
+
+[node name="FlagRemovebgPreview5" type="Sprite2D" parent="." unique_id=1686740561]
+position = Vector2(982, 290)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_h2yge")
+
+[node name="FlagRemovebgPreview6" type="Sprite2D" parent="." unique_id=295313852]
+position = Vector2(1197, 279)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_h2yge")
+
+[node name="FlagRemovebgPreview7" type="Sprite2D" parent="." unique_id=13034466]
+position = Vector2(1441, 282)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_h2yge")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1460278768]
+stream = ExtResource("4_1bvp3")
